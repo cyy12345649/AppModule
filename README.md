@@ -13,3 +13,10 @@ npm install express@4.17.1 --registry=https://registry.npmmirror.com
 - install vue2
 npm install  @vue/cli
 sudo npm install -g @vue/cli --registry=https://registry.npmmirror.com
+
+
+### 安装依赖
+在`front-end`和`back-end`文件夹下分别执行
+```
+npm install --registry=https://registry.npmmirror.com
+```
