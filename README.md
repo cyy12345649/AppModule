@@ -28,3 +28,13 @@ npm install --registry=https://registry.npmmirror.com
 
 ### 尝试运行
 ![alt text](assets/README-IMAGES/README/image.png)
+
+### GIT
+1. ssh
+
+
+
+1. clone
+2. config your git
+3. commit
+4. push (ssh)

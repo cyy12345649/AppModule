@@ -2,29 +2,29 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// 引入数据库
+const db = require('./db/db.js')
+
+// 引入路由模块
+const greetRoutes = require('./routes/greet');
+const participateRoutes = require('./routes/participate');
+
+// 设置CORS
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*'); // 允许所有源
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   next();
 });
-app.use(express.json()); // 解析JSON格式的请求体
+
+// 解析JSON格式的请求体
+app.use(express.json());
 
 
-// 处理GET请求，返回欢迎信息
-app.get('/api/greet', (req, res) => {
-  console.log("GET: /api/greet");
-  res.json({ message: 'Hello! Please send your name.' });
-});
+// 使用路由模块
+greetRoutes(app);
+participateRoutes(app, db)
 
-// 处理POST请求，接收用户输入的姓名并返回问候语
-app.post('/api/greet', (req, res) => {
-  const name = req.body.name;
-  const greeting = `Hello, ${name}!`;
-  console.log("POST: ", name);
-
-  res.json({ message: greeting });
-});
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
