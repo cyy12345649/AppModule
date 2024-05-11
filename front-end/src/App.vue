@@ -1,10 +1,20 @@
 <template>
+
+
+
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="app1">
+      <nav>
+        <router-link to="/activitymain">SGCC</router-link> |
+        <router-link to="/about">About</router-link>
+      </nav>
+      <router-view/>
+    </div>
+    <!-- <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
     <!-- 这是添加的一个测试示例 -->
-    <div>
+    <!-- <div>
       <h1>Greeting from Server</h1>
       <form @submit.prevent="sendGreeting">
         <label for="name">Your name:</label>
@@ -12,11 +22,11 @@
         <button type="submit">Greet me!</button>
       </form>
       <p>{{ serverResponse }}</p>
-    </div>
+    </div> -->
     <!-- 测试示例end -->
 
     <!-- test1 /api/check-user_activity_participation_status -->
-    <div>
+    <!-- <div>
       <h1>Greeting from Server</h1>
       <form @submit.prevent="checkUserParicipateStatus">
         <label for="test1_userId">Your userId:</label>
@@ -24,7 +34,7 @@
         <button type="submit">Greet me!</button>
       </form>
       <p>{{ test1_status }}</p>
-    </div>
+    </div> -->
     <!-- test end -->
 
   </div>
@@ -37,7 +47,7 @@ import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld
   },
   // 添加测试示例的数据和方法
   data() {

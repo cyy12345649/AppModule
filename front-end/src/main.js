@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import router from './router'
 
 // 引入axios
 import axios from 'axios';
@@ -14,5 +15,6 @@ Vue.prototype.$http = instance; // 将axios实例添加到Vue的原型链上，�
 Vue.config.productionTip = false
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')
