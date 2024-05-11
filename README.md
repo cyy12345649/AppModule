@@ -38,3 +38,7 @@ npm install --registry=https://registry.npmmirror.com
 2. config your git
 3. commit
 4. push (ssh)
+
+
+
+From LI
