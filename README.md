@@ -41,4 +41,4 @@ npm install --registry=https://registry.npmmirror.com
 
 
 
-From LI
+From LI use ssh
