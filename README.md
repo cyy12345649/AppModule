@@ -42,3 +42,5 @@ npm install --registry=https://registry.npmmirror.com
 
 
 From LI use ssh
+
+From CYY use ssh
