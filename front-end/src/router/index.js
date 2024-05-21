@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ActivitySignUp from '../views/ActivitySignUp.vue'
 import ActivityMain from '../views/ActivityMain.vue'
 
 Vue.use(VueRouter)
@@ -10,6 +11,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/ActivitySignUp',
+    name: 'ActivitySignUp',
+    component: ActivitySignUp
   },
   {
     path: '/ActivityMain',

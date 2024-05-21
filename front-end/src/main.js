@@ -2,6 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
+// 引入Vant
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
+
 // 引入axios
 import axios from 'axios';
 
