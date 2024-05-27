@@ -1,38 +1,56 @@
 <!-- 活动主页面 -->
 
 <template>
-    <div>
-        <!-- 你的页面内容 -->
-
-        <div>
-            <!-- <van-button type="primary" @click="showBuyDialog">Buy</van-button>
-                <van-dialog v-show="showBuyDialogFlag" title="Buy" show-cancel-button :beforeClose="beforeCloseBuyDialog">
-                    <van-field v-model="buyDialogInputValue" type="digit" label="购买数量" />
-                </van-dialog> -->
-            <van-button type="primary" @click="showBuyDialogFlag = true">Buy</van-button>
-                <van-dialog 
-                    v-model="showBuyDialogFlag" 
-                    title="Sell" 
-                    show-cancel-button 
-                    @confirm="transactionBuy"
-                    @close="buyDialogInputValue=1"
-                >
-                    <van-field v-model="buyDialogInputValue" type="digit" label="买入数量" />
-                </van-dialog>
-            
-            <van-button type="primary" @click="showSellDialogFlag = true">Sell</van-button>
-                <van-dialog 
-                    v-model="showSellDialogFlag" 
-                    title="Sell" 
-                    show-cancel-button 
-                    @confirm="transactionSell"
-                    @close="sellDialogInputValue=1"
-                >
-                    <van-field v-model="sellDialogInputValue" type="digit" label="卖出数量" />
-                </van-dialog>
+    <div class="activity-page">
+        <!-- 显示用户账户数据和市场数据 -->
+        <div class="info">
+        <van-cell-group inset>
+            <van-cell title="curCoupons" v-model="curCoupons" />
+            <van-cell title="curPoints" v-model="curPoints" />
+            <van-cell title="curCouponPrice" v-model="curCouponPrice" />
+        </van-cell-group>
         </div>
-        {{ sellDialogInputValue }}
+        
+        <!-- 买卖操作 -->
+        <div class="coupon-transaction">
+        <van-button type="primary" @click="showBuyDialogFlag = true">Buy</van-button>
+            <van-dialog 
+                v-model="showBuyDialogFlag" 
+                title="Sell" 
+                show-cancel-button 
+                @confirm="transactionBuy"
+                @close="buyDialogInputValue=1"
+            >
+                <van-field v-model="buyDialogInputValue" type="digit" label="买入数量" />
+            </van-dialog>
+        
+        <van-button type="primary" @click="showSellDialogFlag = true">Sell</van-button>
+            <van-dialog 
+                v-model="showSellDialogFlag" 
+                title="Sell" 
+                show-cancel-button 
+                @confirm="transactionSell"
+                @close="sellDialogInputValue=1"
+            >
+                <van-field v-model="sellDialogInputValue" type="digit" label="卖出数量" />
+            </van-dialog>
+        </div>
 
+        <!-- 活动规则 -->
+        <div class="rules">
+        <van-cell-group inset>
+            <van-cell title="活动规则 " value="点击查看活动规则" />
+        </van-cell-group>
+        </div>
+        
+        <div class="otherpages">
+        <van-grid>
+            <van-grid-item icon="photo-o" text="参加奖励" />
+            <van-grid-item icon="photo-o" text="每日电量" />
+            <van-grid-item icon="photo-o" text="每日券价" />
+            <van-grid-item icon="photo-o" text="交易记录" />
+        </van-grid>
+        </div>
     </div>
 </template>
   
@@ -136,11 +154,20 @@ export default {
 };
 </script>
 
-<style>
-.full-screen {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+<style scoped>
+.activity-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
+
+.info, .coupon-transaction, .rules, .otherpages {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+}
+
 </style>
